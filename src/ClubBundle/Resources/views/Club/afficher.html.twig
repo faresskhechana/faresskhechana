@@ -1,0 +1,48 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Afficher{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <h1>Clubs List</h1>
+
+    <table border="1">
+        <tr>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Logo</th>
+            <th>Description</th>
+            <th>Num Tél</th>
+            <th>E-mail</th>
+            <th>Chef</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>Show</th>
+        </tr>
+
+        {% for cc in club %}
+        <tr>
+
+            <td> {{ cc.nom }}</td>
+            <td> {{ cc.type }}</td>
+            <td> {{ cc.logo }}</td>
+            <td> {{ cc.description }}</td>
+            <td> {{ cc.numTel }}</td>
+            <td> {{ cc.email }}</td>
+            <td> {{ cc.chef }}</td>
+            <td>
+                <a href="{{ path('_supprimer',{'id':cc.id}) }}">Delete</a>
+            </td>
+            <td>
+                <a href="{{ path('_modifier',{'id':cc.id}) }}">Update</a>
+            </td>
+            <td>
+                <a href="{{ path('_afficherC',{'id':cc.id}) }}">Show</a>
+            </td>
+
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock %}

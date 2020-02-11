@@ -1,0 +1,39 @@
+club_homepage:
+    path:     /
+    defaults: { _controller: ClubBundle:Default:index }
+
+_ajouter:
+    path:     /Ajouter
+    defaults: { _controller: ClubBundle:Club:Ajouter }
+
+_modifier:
+    path:     /Modifier/{id}
+    defaults: { _controller: ClubBundle:Club:Modifier }
+
+_afficher:
+    path:     /Afficher
+    defaults: { _controller: ClubBundle:Club:Afficher }
+
+_supprimer:
+    path:     /Supprimer/{id}
+    defaults: { _controller: ClubBundle:Club:Supprimer }
+
+_afficherC:
+    path:     /Afficher/{id}
+    defaults: { _controller: ClubBundle:Club:AfficherId }
+
+_ajouterEvent:
+    path:     /AjouterEvent
+    defaults: { _controller: ClubBundle:Event:Ajouter }
+
+_modifierEvent:
+    path:     /ModifierEvent/{id}
+    defaults: { _controller: ClubBundle:Event:Modifier }
+
+_afficherEvent:
+    path:     /AfficherEvent
+    defaults: { _controller: ClubBundle:Event:Afficher }
+
+_supprimerEvent:
+    path:     /SupprimerEvent/{id}
+    defaults: { _controller: ClubBundle:Event:Supprimer }

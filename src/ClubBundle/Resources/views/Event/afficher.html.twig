@@ -1,0 +1,42 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Afficher{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <h1>Events List</h1>
+
+    <table border="1">
+        <tr>
+            <th>Nom</th>
+            <th>Date Début</th>
+            <th>Date Fin</th>
+            <th>Nombre de places</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+
+        {% for ee in event %}
+        <tr>
+
+            <td> {{ ee.nom }}</td>
+            <td> {{ ee.dateDebut | date }}</td>
+            <td> {{ ee.dateFin | date }}</td>
+            <td> {{ ee.nbPlaces }}</td>
+            <td> {{ ee.description }}</td>
+            <td> {{ ee.photo }}</td>
+            <td>
+                <a href="{{ path('_supprimerEvent',{'id':ee.id}) }}">Delete</a>
+            </td>
+            <td>
+                <a href="{{ path('_modifierEvent',{'id':ee.id}) }}">Update</a>
+            </td>
+
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock %}

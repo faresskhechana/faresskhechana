@@ -1,0 +1,7 @@
+club:
+    resource: "@ClubBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

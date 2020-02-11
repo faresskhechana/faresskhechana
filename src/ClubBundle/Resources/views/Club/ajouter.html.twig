@@ -1,0 +1,39 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <h1>Club ADD</h1>
+    <table class="table-striped">
+{{ form_start(f) }}
+        <tr>
+    <td>{{ form_label(f.nom) }}</td>
+    <td>{{ form_widget(f.nom) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(f.type) }}</td>
+            <td>{{ form_widget(f.type) }}</td>
+        </tr>     <tr>
+            <td>{{ form_label(f.logo) }}</td>
+            <td>{{ form_widget(f.logo) }}</td>
+        </tr>     <tr>
+            <td>{{ form_label(f.description) }}</td>
+            <td>{{ form_widget(f.description) }}</td>
+        </tr>     <tr>
+            <td>{{ form_label(f.numTel) }}</td>
+            <td>{{ form_widget(f.numTel) }}</td>
+        </tr>     <tr>
+            <td>{{ form_label(f.email) }}</td>
+            <td>{{ form_widget(f.email) }}</td>
+        </tr>
+        </tr>
+        <tr>
+            <td>{{ form_label(f.chef) }}</td>
+            <td>{{ form_widget(f.chef) }}</td>
+        </tr>
+        <tr><td></td>
+            <td>{{ form_widget(f.confirmer) }}</td>
+        </tr>
+{{ form_end(f) }}
+    </table>
+{% endblock %}
