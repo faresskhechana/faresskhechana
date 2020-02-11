@@ -37,3 +37,8 @@ _afficherEvent:
 _supprimerEvent:
     path:     /SupprimerEvent/{id}
     defaults: { _controller: ClubBundle:Event:Supprimer }
+
+_afficherEventID:
+    path:     /AfficherEvent/{id}
+    defaults: { _controller: ClubBundle:Event:AfficherEventID }
+

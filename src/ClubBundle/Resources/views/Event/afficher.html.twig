@@ -18,14 +18,15 @@
             <th>Photo</th>
             <th>Delete</th>
             <th>Update</th>
+            <th>Show</th>
         </tr>
 
         {% for ee in event %}
         <tr>
 
             <td> {{ ee.nom }}</td>
-            <td> {{ ee.dateDebut | date }}</td>
-            <td> {{ ee.dateFin | date }}</td>
+            <td> {{ ee.dateDebut | date('d/m/yy') }}</td>
+            <td> {{ ee.dateFin | date('d/m/yy') }}</td>
             <td> {{ ee.nbPlaces }}</td>
             <td> {{ ee.description }}</td>
             <td> {{ ee.photo }}</td>
@@ -35,8 +36,14 @@
             <td>
                 <a href="{{ path('_modifierEvent',{'id':ee.id}) }}">Update</a>
             </td>
+            <td>
+                <a href="{{ path('_afficherEventID',{'id':ee.id}) }}">Show</a>
+            </td>
 
             {% endfor %}
         </tr>
     </table>
+    <ul>
+        <li><a href="{{ path('_ajouterEvent') }}">New Event</a></li>
+    </ul>
 {% endblock %}

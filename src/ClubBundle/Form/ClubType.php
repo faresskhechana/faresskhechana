@@ -17,13 +17,14 @@ class ClubType extends AbstractType
     {
         $builder->add('nom')
             ->add('type')
-
             ->add('description')
             ->add('numTel')
             ->add('email')
             ->add('chef')
             ->add('confirmer',SubmitType::class);
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

@@ -1,0 +1,24 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Afficher{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <h1>Event Details</h1>
+
+    <table border="1">
+        <ul>
+            <li>Nom : {{ event.nom }}</li>
+            <li>Date Début : {{ event.dateDebut | date }}</li>
+            <li>Date Fin : {{ event.dateFin | date }}</li>
+            <li>Nombre de places : {{ event.nbPlaces }}</li>
+            <li>Description : {{ event.description }}</li>
+            <li>Photo : {{ event.photo }}</li>
+            <li>
+                <a href="{{ path('_afficherEvent',{'id':event.id}) }}">Back</a>
+            </li>
+        </ul>
+    </table>
+{% endblock %}

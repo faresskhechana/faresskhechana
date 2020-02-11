@@ -3,6 +3,7 @@
 namespace ClubBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Club
@@ -37,7 +38,7 @@ class Club
 
     /**
      * @var string
-     *
+     * @Assert\Image()
      * @ORM\Column(name="logo", type="string", length=255, nullable=true)
      */
     private $logo;

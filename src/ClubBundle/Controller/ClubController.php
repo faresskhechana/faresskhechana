@@ -14,10 +14,20 @@ class ClubController extends Controller
     {
         $club=new Club();
         $form=$this->createForm(ClubType::class,$club)
-            ->add('logo',FileType::class);
+            ->add('logo',FileType::class,array('label'=>'logo'));
         $form->handleRequest($request);
         $em=$this->getDoctrine()->getManager();
         if ($form->isSubmitted() && $form->isValid()) {
+            //$valid =1;
+            //die('here');
+            /**
+             * @var UploadedFile $file
+             */
+            $file=$club->getLogo();
+            $fileName=md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('image_directory'),$fileName);
+            $club->setLogo($fileName);
+
             $em->persist($club);
             $em->flush();
             return $this->redirectToRoute('_afficher');
@@ -58,8 +68,8 @@ class ClubController extends Controller
     }
 
     public function AfficherIdAction($id){
-        $club=$this->getDoctrine()->getRepository(Club::class)->find($id);
-        return $this->render('@Club/Club/afficher.html.twig',
+        $club=$this->getDoctrine()->getRepository(Club::class)->find(array('id'=>$id));
+        return $this->render('@Club/Club/afficherClub.html.twig',
             array('club'=>$club));
     }
 }

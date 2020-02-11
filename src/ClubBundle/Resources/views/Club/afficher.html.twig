@@ -27,7 +27,7 @@
 
             <td> {{ cc.nom }}</td>
             <td> {{ cc.type }}</td>
-            <td> {{ cc.logo }}</td>
+            <td class="fa-image" height="300px" width="400px" style="background-image: url('{{ asset('images/' ~ cc.logo) }}')"></td>
             <td> {{ cc.description }}</td>
             <td> {{ cc.numTel }}</td>
             <td> {{ cc.email }}</td>
@@ -41,8 +41,10 @@
             <td>
                 <a href="{{ path('_afficherC',{'id':cc.id}) }}">Show</a>
             </td>
-
             {% endfor %}
         </tr>
     </table>
+    <ul>
+        <li><a href="{{ path('_ajouter') }}">New Club</a></li>
+    </ul>
 {% endblock %}

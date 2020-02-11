@@ -19,8 +19,10 @@ class EventType extends AbstractType
             ->add('dateFin')
             ->add('nbPlaces')
             ->add('description')
-        ->add('confirmer',SubmitType::class);
-    }/**
+            ->add('confirmer',SubmitType::class);
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

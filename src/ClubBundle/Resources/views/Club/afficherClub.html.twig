@@ -1,0 +1,20 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Afficher Club{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <h1>Club Details</h1>
+        <ul>
+            <li>Nom : {{ club.nom }}</li>
+            <li>Type : {{ club.type }}</li>
+            <li >Logo : {{ club.logo }}</li>
+            <li>Description : {{ club.description }}</li>
+            <li>Num Tél : {{ club.numTel }}</li>
+            <li>E-mail : {{ club.email }}</li>
+            <li>Chef : {{ club.chef }}</li>
+            <li><a href="{{ path('_afficher') }}">Back</a></li>
+        </ul>
+{% endblock %}

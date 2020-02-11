@@ -57,4 +57,11 @@ class EventController extends Controller
         return $this->redirectToRoute('_afficherEvent');
     }
 
+    public function AfficherEventIDAction($id)
+    {
+        $event=$this->getDoctrine()->getRepository(Event::class)->find(array('id'=>$id));
+        return $this->render('@Club/Event/afficherEvent.html.twig',
+            array('event'=>$event));
+    }
+
 }
